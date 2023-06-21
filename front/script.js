@@ -56,7 +56,7 @@ async function axiosRequest() {
 function exibirResposta(resposta) {
     const { categoria, origem, origemSimbolo, valorBase, destino, destinoSimbolo, resultado } = resposta;
     let resultadoFormatado;
-    if (Math.abs(resultado) < 0.0001) {
+    if (Math.abs(resultado) < 0.001) {
         resultadoFormatado = resultado.toExponential(2);
     } else {
         resultadoFormatado = resultado.toLocaleString('pt-BR');
