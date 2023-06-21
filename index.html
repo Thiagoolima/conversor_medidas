@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conversor de Medidas</title>
+    <link rel="stylesheet" type="text/css" href="./front/style.css">
+    <link rel="shortcut icon" href="./front/imagens/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Conversor de Medidas</h1>
+    <div class="container">
+        <form>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="">Selecione</option>
+            </select>
+
+            <label for="unidade1">Unidade Origem:</label>
+            <select id="unidade1"></select>
+
+            <label for="unidade2">Unidade Destino:</label>
+            <select id="unidade2"></select>
+
+            <label for="valor">Valor:</label>
+            <input type="input" id="valor" placeholder="Digite o valor a converter">
+
+            <button type='button' id="converterBotao" onclick="axiosRequest()">Converter</button>
+
+            <div id="resultado"></div>
+
+            <div id="historicoConversoes">
+                <h3>Histórico de Conversões</h3>
+                <table id="historicoTabela">
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Categoria</th>
+                            <th>Unidade Origem</th>
+                            <th>Valor</th>
+                            <th>Unidade Destino</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historicoCorpo"></tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qs/dist/qs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./back/src/data/medidas.js"></script>
+    <script src="./front/script.js"></script>
+</body>
+
+</html>
