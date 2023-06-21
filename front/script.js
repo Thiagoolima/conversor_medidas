@@ -41,7 +41,7 @@ async function axiosRequest() {
             unidade2: unidade2.value,
             valor: valor
         });
-        const request = await axios.get(`http://localhost:3000/medidas?${url}`);
+        const request = await axios.get(`https://salmon-hedgehog-sari.cyclic.app/medidas?${url}`);
         exibirResposta(request.data);
     } catch (error) {
         if (error.response && error.response.data && error.response.data.message) {
