@@ -1,6 +1,7 @@
 const data = require('../data/medidas');
 
 function obterDados(req, res, next) {
+    console.log(req.query)
     try {
         let { categoria, unidade1, unidade2, valor } = req.query
         const dadosCat = data.find((obj) => obj.nome === categoria).opcoes;
