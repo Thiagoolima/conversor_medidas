@@ -47,10 +47,9 @@ function converter(req, res) {
             resultado
         });
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 }
-
 module.exports = {
     converter
 }

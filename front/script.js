@@ -41,20 +41,19 @@ async function axiosRequest() {
             unidade2: unidade2.value,
             valor: valor
         });
-        const request = await axios.get(`https://salmon-hedgehog-sari.cyclic.app/medidas?${url}`);
+        const request = await axios.get(`http://localhost:3000/medidas?${url}`);
         exibirResposta(request.data);
     } catch (error) {
         if (error.response && error.response.data && error.response.data.message) {
             alert(error.response.data.message);
         } else {
             alert("Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.")
-            console.log(error);
         }
     }
 };
 
 function exibirResposta(resposta) {
-    const { categoria, origem, origemSimbolo, valorBase, destino, destinoSimbolo, resultado } = resposta;
+    const { origemSimbolo, valorBase, destinoSimbolo, resultado } = resposta;
     let resultadoFormatado;
     if (Math.abs(resultado) < 0.001) {
         resultadoFormatado = resultado.toExponential(2);
